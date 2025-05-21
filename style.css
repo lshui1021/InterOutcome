@@ -32,30 +32,114 @@
     left: 80px; 
 }
 
-@keyframes cursor {
-    50% { border-color: transparent }
-}
-
-@keyframes typing {
-    from { width: 0 } 
-}
-
 .tablet{
-  width: 420px; 
+  width: 600px; 
   border-radius: 18px;
-  margin-bottom: -240px;
+  margin-bottom: -300px;
+  animation: slideInFromBottom 0.5s ease-out forwards; 
 }
+
 .rectangle {
-  width: 70%; 
-  height: 260px; 
+  width: 80%; 
+  height: 300px; 
   background-color: #484b33;
   border-radius: 10px;
   z-index: -1;
-  margin-bottom: -60px;
+  animation: slideInFromBottom 1s ease-out forwards; 
 }
-.s-rectangle{
-  width: 70%; 
-  height: 60px; 
-  background-color: #484b33;
-  border-radius: 10px;
+
+.line {
+  width: 90%; 
+  height: 2px; 
+  background-color: rgba(128, 128, 128, 0.5);
+  margin: 30px;
+}
+
+.title-text{
+  font-size: 22px;
+  font-family: 'TT Ramillas Trl', sans-serif;
+  font-weight: 700;
+  color: #484b33;
+  align-self: flex-start;
+  padding-left: 2em;
+}
+
+.content-text{
+  font-size: 20px;
+  padding-left: 2em;
+}
+
+.battery{
+   width: 50%; 
+}
+
+@keyframes cursor {
+  50% { border-color: transparent }
+}
+
+@keyframes typing {
+  from { width: 0 } 
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 手機 */
+@media (max-width: 767px) {
+    .rectangle {
+        width: 90vw; 
+        height: 220px; 
+    }
+    .tablet {
+        width: 90%;
+        margin-bottom: -220px;
+    }
+    .dynamic-text {
+        font-size: 22px;
+        width: 250px;
+        letter-spacing: 1px;
+        left: 0px;
+    }
+    .static-text {
+        font-size: 18px;
+        left: 0px; 
+    }
+    .title-text{
+        font-size: 14px;
+        padding-left: 1em;
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .rectangle {
+        width: 80vw;
+        height: 200px; 
+    }
+    .tablet {
+        width: 400px; 
+        margin-bottom: -200px;
+    }
+
+    .dynamic-text {
+        font-size: 36px;
+        width: 400px;
+        letter-spacing: 2px;
+        left: -30px;
+    }
+    .static-text {
+        font-size: 28px;
+        left: 30px; 
+    }
+     .title-text{
+        font-size: 20px;
+    }
 }
